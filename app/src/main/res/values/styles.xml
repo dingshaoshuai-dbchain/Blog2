@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ImageView_menu">
+        <item name="android:layout_width">42dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:background">@drawable/ripple_circle_bgf3f1f1</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+    <style name="Button_common">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dp_54</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:textColor">@color/color_FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/shape_radius8dp_bg2f0088</item>
+    </style>
+
+    <style name="TextView_login_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_000000</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LabelEditText_et">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/selector_label_edittext</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/color_000000</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">@dimen/main_EdiText_content_padding_start</item>
+        <item name="android:paddingEnd">@dimen/main_EdiText_content_padding_end</item>
+    </style>
+
+    <style name="LabelEdiText_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/dp_14</item>
+        <item name="android:background">@color/color_FFFFFF</item>
+        <item name="android:paddingStart">@dimen/dp_4</item>
+        <item name="android:paddingEnd">@dimen/dp_4</item>
+        <item name="android:textColor">@drawable/selector_label_edittext_title</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="LabelEditText_et_password" parent="LabelEditText_et">
+        <item name="android:digits">@string/password_restricted_characters</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:maxLength">@integer/password_length</item>
+    </style>
+</resources>

@@ -14,7 +14,7 @@
     <string name="input_password">请输入密码</string>
     <string name="reinput_password">请再次输入密码</string>
     <string name="reset_password">重置密码</string>
-    <string name="input_valid_phone_number">请输入有效的手机号码</string>
+    <string name="input_valid_phone_number" >请输入有效的手机号码</string>
     <string name="input_double_password_different">两次输入的密码不一致</string>
     <string name="input_valid_format_password">请输入6&#8211;15位数字+大写字母+小写字母组合的密码</string>
     <string name="operation_successful">操作成功</string>
