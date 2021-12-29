@@ -8,6 +8,7 @@ import cloud.dbchain.network.Code
 import cloud.dbchain.network.bean.BaseResponse
 import com.google.gson.Gson
 import dingshaoshuai.function.toast
+import dingshaoshuai.network.util.logE
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.ResponseBody
@@ -66,12 +67,14 @@ class CodeInterceptor : Interceptor {
                         }
                     }
                 } else {
+                    logE("拿到服务器返回错误信息：${baseResponse.msg}")
                     handle.post {
                         toast(baseResponse.msg)
                     }
                 }
             }
         } catch (e: Exception) {
+            logE("解析服务端数据错误：${e.message}")
             handle.post {
                 toast(Code.getMsgByCode(Code.FAILURE))
             }

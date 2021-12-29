@@ -2,23 +2,22 @@ package cloud.dbchain.blog2.ui.login
 
 import android.content.Context
 import android.content.Intent
-import android.widget.Toast
+import cloud.dbchain.blog2.MainActivity
 import cloud.dbchain.blog2.R
 import cloud.dbchain.blog2.binding.bindingLabelFocus
-import cloud.dbchain.blog2.databinding.ActivityRegisterBinding
+import cloud.dbchain.blog2.databinding.ActivityLoginBinding
 import dingshaoshuai.base.ktx.defaultViewModel
 import dingshaoshuai.base.mvvm.BaseMvvmActivity
-import dingshaoshuai.function.toast
 
-class RegisterActivity : BaseMvvmActivity<ActivityRegisterBinding, RegisterViewModel>() {
+class LoginActivity : BaseMvvmActivity<ActivityLoginBinding, LoginViewModel>() {
     override val layoutId: Int
-        get() = R.layout.activity_register
+        get() = R.layout.activity_login
 
-    override fun bindViewModel(viewModel: RegisterViewModel) {
+    override fun bindViewModel(viewModel: LoginViewModel) {
         binding.viewModel = viewModel
     }
 
-    override fun initViewModel(): RegisterViewModel {
+    override fun initViewModel(): LoginViewModel {
         return defaultViewModel()
     }
 
@@ -26,26 +25,26 @@ class RegisterActivity : BaseMvvmActivity<ActivityRegisterBinding, RegisterViewM
         super.initClickListener()
         bindingLabelFocus(binding.etPhoneNumber, binding.tvPhoneNumberTitle)
         bindingLabelFocus(binding.etPassword, binding.tvPasswordTitle)
-        bindingLabelFocus(binding.etPasswordConfirm, binding.tvPasswordConfirmTitle)
-        binding.ivSetPasswordPrompt.setOnClickListener {
-            toast(R.string.input_valid_format_password, Toast.LENGTH_LONG)
+        binding.tvRegister.setOnClickListener {
+            RegisterActivity.start(this@LoginActivity)
         }
-        binding.tvLogin.setOnClickListener {
-            LoginActivity.start(this@RegisterActivity)
+        binding.tvForgetPassword.setOnClickListener {
+            //ResetPasswordActivity.start(this@LoginActivity)
         }
     }
 
     override fun initObserver() {
         super.initObserver()
-        viewModel.loginCallLiveData.observe(this) {
-            LoginActivity.start(this)
+        viewModel.startMainCallLiveData.observe(this) {
+            MainActivity.start(this)
+            finish()
         }
     }
 
     companion object {
         fun start(context: Context) {
             val intent = Intent().apply {
-                setClass(context, RegisterActivity::class.java)
+                setClass(context, LoginActivity::class.java)
                 // 携带参数
             }
             context.startActivity(intent)

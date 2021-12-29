@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="cloud.dbchain.blog2.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.login.LoginActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            style="@style/ImageView_menu"
+            android:layout_marginStart="@dimen/main_content_padding"
+            android:layout_marginTop="@dimen/main_content_padding_top"
+            android:background="@drawable/ripple_circle_bgwhite"
+            android:onClick="@{v->viewModel.finishPage()}"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/TextView_login_title"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivBack" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPhoneNumber"
+            style="@style/LabelEditText_et"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:hint="@string/input_phone_number"
+            android:inputType="number"
+            android:maxLength="@integer/phone_number_length"
+            android:text="@={viewModel.phoneNumber}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPhoneNumberTitle"
+            style="@style/LabelEdiText_label"
+            android:text="@string/phone_number"
+            app:layout_constraintBottom_toTopOf="@+id/etPhoneNumber"
+            app:layout_constraintStart_toStartOf="@+id/etPhoneNumber"
+            app:layout_constraintTop_toTopOf="@+id/etPhoneNumber" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etPassword"
+            style="@style/LabelEditText_et_password"
+            android:layout_marginTop="38dp"
+            android:hint="@string/input_password"
+            android:text="@={viewModel.password}"
+            app:layout_constraintEnd_toEndOf="@+id/etPhoneNumber"
+
+            app:layout_constraintStart_toStartOf="@+id/etPhoneNumber"
+            app:layout_constraintTop_toBottomOf="@+id/etPhoneNumber" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPasswordTitle"
+            style="@style/LabelEdiText_label"
+            android:text="@string/password"
+            app:layout_constraintBottom_toTopOf="@+id/etPassword"
+            app:layout_constraintStart_toStartOf="@+id/etPassword"
+            app:layout_constraintTop_toTopOf="@+id/etPassword" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            style="@style/Button_common"
+            android:layout_marginStart="@dimen/main_content_padding"
+            android:layout_marginEnd="@dimen/main_content_padding"
+            android:layout_marginBottom="@dimen/main_button_margin_bottom"
+            android:onClick="@{v->viewModel.login()}"
+            android:text="@string/login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNoAccountTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_12"
+            android:text="@string/not_account_question"
+            android:textColor="@color/color_000000"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+            app:layout_constraintStart_toStartOf="@+id/btnLogin" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_0"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingStart="@dimen/dp_12"
+            android:paddingEnd="@dimen/dp_12"
+            android:text="@string/register"
+            android:textColor="@color/color_2F0088"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNoAccountTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvNoAccountTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvNoAccountTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvForgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_0"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingStart="@dimen/main_content_padding"
+            android:paddingEnd="@dimen/main_content_padding"
+            android:text="@string/forget_password"
+            android:textColor="@color/color_2F0088"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNoAccountTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvNoAccountTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

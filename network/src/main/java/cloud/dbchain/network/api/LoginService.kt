@@ -11,5 +11,5 @@ interface LoginService {
     suspend fun register(@Body map: Map<String, String>): BaseResponse<*>
 
     @POST("user/login")
-    fun login(@Body map: Map<String, String>): Call<BaseResponse<*>>
+    fun login(@Body map: Map<String, String>): Call<BaseResponse<Any>>
 }

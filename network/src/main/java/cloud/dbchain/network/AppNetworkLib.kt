@@ -11,7 +11,7 @@ import okhttp3.Interceptor
 
 internal lateinit var networkApplication: Application
 
-fun initBlogNetworkLib(
+fun initAppNetworkLib(
     application: Application,
     baseUrl: String,
     isDebug: Boolean = false,

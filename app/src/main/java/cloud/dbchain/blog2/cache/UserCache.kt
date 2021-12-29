@@ -11,7 +11,7 @@ import dingshaoshuai.function.kt.toObject
  */
 object UserCache : BaseAnyCache<UserBean>() {
     override val key: String
-        get() = "nft_user_info"
+        get() = "app_user_info"
 
     override fun json2any(valueJson: String): UserBean {
         return valueJson.toObject(UserBean::class.java)
