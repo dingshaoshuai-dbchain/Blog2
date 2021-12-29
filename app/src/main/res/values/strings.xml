@@ -27,4 +27,7 @@
     <string name="network_error">网络似乎丢失了，刷新一下吧</string>
     <string name="refresh">刷新</string>
     <string name="login_failure_try">登录失败，请重试</string>
+    <string name="recover_word">恢复码</string>
+    <string name="input_recover_word">请输入恢复码</string>
+    <string name="back">返回</string>
 </resources>

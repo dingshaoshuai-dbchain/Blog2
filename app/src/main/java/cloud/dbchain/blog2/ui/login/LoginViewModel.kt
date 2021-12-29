@@ -3,9 +3,11 @@ package cloud.dbchain.blog2.ui.login
 import android.text.TextUtils
 import androidx.lifecycle.LiveData
 import cloud.dbchain.blog2.R
+import cloud.dbchain.blog2.cache.UserCache
 import cloud.dbchain.blog2.repository.LoginRepository
 import cloud.dbchain.blog2.util.checkPassword
 import cloud.dbchain.blog2.util.isPhoneNumber
+import cloud.dbchain.network.bean.UserBean
 import dingshaoshuai.base.ktx.launchLoading
 import dingshaoshuai.base.mvvm.BaseViewModel
 import dingshaoshuai.base.mvvm.CallLiveData
@@ -55,6 +57,7 @@ class LoginViewModel : BaseViewModel() {
             },
             successBlock = {
                 toast(R.string.login_success)
+                UserCache.setValue(UserBean(phoneNumberValue, passwordValue))
                 _startMainCallLiveData.call()
             }
         )

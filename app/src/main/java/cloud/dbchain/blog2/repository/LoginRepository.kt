@@ -41,4 +41,22 @@ class LoginRepository {
         CookieInterceptor.cookie = response.headers().get("set-cookie")
         return Code.isSuccess(response.body())
     }
+
+    suspend fun resetPasswordFromRecoverWord(
+        userName: String,
+        recoverWord: String,
+        newPassword: String,
+    ): BaseResponse<*>? {
+        return withContext(Dispatchers.IO) {
+            RetrofitClient.sendRequestForReturn {
+                val map = mapOf(
+                    "userName" to userName,
+                    "recoverWord" to recoverWord,
+                    "newPassword" to newPassword,
+                )
+                return@sendRequestForReturn RetrofitClient.createService(LoginService::class.java)
+                    .resetPasswordFromRecoverWord(map)
+            }
+        }
+    }
 }

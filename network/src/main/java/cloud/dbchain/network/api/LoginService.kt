@@ -12,4 +12,7 @@ interface LoginService {
 
     @POST("user/login")
     fun login(@Body map: Map<String, String>): Call<BaseResponse<Any>>
+
+    @POST("user/resetPasswordFromRecoverWord")
+    suspend fun resetPasswordFromRecoverWord(@Body map: Map<String, String>): BaseResponse<*>
 }

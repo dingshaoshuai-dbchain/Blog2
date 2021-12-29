@@ -20,6 +20,9 @@
             android:name=".ui.login.RegisterActivity"
             android:exported="true" />
         <activity
+            android:name=".ui.login.RecoverWordResetActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true" />
         <activity
