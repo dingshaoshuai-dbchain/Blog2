@@ -14,7 +14,7 @@
         <item name="android:textSize">@dimen/sp_14</item>
         <item name="android:textColor">@color/color_FFFFFF</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/shape_radius8dp_bg2f0088</item>
+        <item name="android:background">@drawable/shape_radius8dp_bg2_color_main_button</item>
     </style>
 
     <style name="TextView_login_title">
