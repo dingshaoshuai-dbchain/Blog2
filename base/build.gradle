@@ -45,4 +45,6 @@ dependencies {
     api Libs.DingShaoshuai.commonFunction
     api Libs.Code.UI.qmui
     api Libs.Code.UI.permissionX
+    // viewModelScope
+    api Libs.AndroidX.Lifecycle.viewModelKtx
 }

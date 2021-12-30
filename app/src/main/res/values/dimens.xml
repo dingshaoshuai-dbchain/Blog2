@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="main_content_padding">12dp</dimen>
-    <dimen name="main_content_padding_top">4dp</dimen>
-    <dimen name="main_content_padding_bottom">4dp</dimen>
+    <dimen name="main_content_padding_top">6dp</dimen>
+    <dimen name="main_content_padding_bottom">6dp</dimen>
     <dimen name="main_button_margin_bottom">20dp</dimen>
     <dimen name="main_content_padding_top_system">40dp</dimen>
     <dimen name="main_EdiText_content_padding_start">18dp</dimen>
     <dimen name="main_EdiText_content_padding_end">18dp</dimen>
-    <dimen name="main_page_content_translationY">-60dp</dimen>
-    <dimen name="main_page_content_marginTop">60dp</dimen>
-    <dimen name="main_page_content_marginTop_2">100dp</dimen>
+    <dimen name="btn_elevation">10dp</dimen>
+    <dimen name="item_elevation">2dp</dimen>
 </resources>
