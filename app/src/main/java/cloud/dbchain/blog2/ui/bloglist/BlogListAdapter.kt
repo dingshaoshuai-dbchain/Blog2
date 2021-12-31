@@ -8,12 +8,12 @@ import dingshaoshuai.base.mvvm.BaseDataBindingAdapter
  * @author: Xiao Bo
  * @date: 10/6/2021
  */
-class BlogListAdapter : BaseDataBindingAdapter<String, ItemBlogBinding>() {
+class BlogListAdapter : BaseDataBindingAdapter<Any, ItemBlogBinding>() {
 
     override val layoutId: Int
         get() = R.layout.item_blog
 
-    override fun onBind(binding: ItemBlogBinding, data: String, position: Int) {
+    override fun onBind(binding: ItemBlogBinding, data: Any, position: Int) {
         binding.itemClickListener = itemClickListener
     }
 }

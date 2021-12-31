@@ -12,8 +12,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class BlogListViewModel : BasePageViewModel() {
-    private val _blogListLiveData = MutableLiveData<List<String>>()
-    val blogListLiveData: LiveData<List<String>> = _blogListLiveData
+    private val _blogListLiveData = MutableLiveData<List<Any>>()
+    val blogListLiveData: LiveData<List<Any>> = _blogListLiveData
 
     val refreshing = ObservableBoolean()
 
@@ -22,7 +22,8 @@ class BlogListViewModel : BasePageViewModel() {
             refreshing.set(true)
             val response = getBlogs()
             if (Code.isSuccess(response)) {
-                if (response?.data?.isEmpty() != false) {
+                val data = response?.data
+                if (data == null || data.isEmpty()) {
                     showEmptyPage()
                 } else {
                     _blogListLiveData.value = response.data
@@ -43,5 +44,5 @@ class BlogListViewModel : BasePageViewModel() {
         )
     }
 
-    private suspend fun getBlogs() = BlogRepository.getBlogs()
+    private suspend fun getBlogs() = BlogRepository.getBlogs(mapOf())
 }

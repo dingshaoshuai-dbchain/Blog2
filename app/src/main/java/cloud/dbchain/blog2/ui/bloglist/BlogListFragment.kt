@@ -48,8 +48,8 @@ class BlogListFragment : BaseMvvmFragment<FragmentBloglistBinding, BlogListViewM
 
     override fun initClickListener(view: View) {
         super.initClickListener(view)
-        adapter.itemClickListener = object : BaseDataBindingAdapter.ItemClickListener<String> {
-            override fun onItemClick(data: String) {
+        adapter.itemClickListener = object : BaseDataBindingAdapter.ItemClickListener<Any> {
+            override fun onItemClick(data: Any) {
                 mActivity?.let { activity ->
                     //BlogDetailActivity.start(activity, data)
                 }
